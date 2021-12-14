@@ -14,14 +14,18 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Bundle b = getIntent().getExtras();
-        User user = (User) b.getSerializable("user");
+        Cars Cars = (Cars) b.getSerializable("cars");
 
-        ImageView avatar = findViewById(R.id.avater);
-        TextView name = findViewById(R.id.name);
-        TextView email = findViewById(R.id.email);
+        ImageView car_photo = findViewById(R.id.car_photo);
+        TextView Brand = findViewById(R.id.brand);
+        TextView Model = findViewById(R.id.model);
+        TextView Year = findViewById(R.id.year);
+        TextView Price = findViewById(R.id.Price);
 
-        avatar.setImageResource(user.getImage());
-        name.setText(user.getName());
-        email.setText(user.getEmail());
+        car_photo.setImageResource(Cars.getImage());
+        Brand.setText(Cars.getBrand());
+        Model.setText(Cars.getModel());
+        Year.setText(Cars.getYear());
+        Price.setText(Cars.getPrice());
     }
 }

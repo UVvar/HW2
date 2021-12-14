@@ -8,23 +8,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AddContactActivity extends AppCompatActivity {
+public class AddCarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_contact);
+        setContentView(R.layout.activity_add_car);
 
         Button btn = findViewById(R.id.button);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText name = findViewById(R.id.name);
-                EditText email = findViewById(R.id.email);
-                User user = new User(R.drawable.avatar7,name.getText().toString(),email.getText().toString());
+                EditText Brand = findViewById(R.id.brand);
+                EditText Model = findViewById(R.id.model);
+                EditText Year = findViewById(R.id.year);
+                EditText Price = findViewById(R.id.price);
+
+                 Cars cars = new Cars(R.drawable.bmw,Brand.getText().toString(), Model.getText ().toString(),Year.getText().toString(),Price.getText().toString());
+
 
                 Intent i = new Intent();
-                i.putExtra("user",user);
+                i.putExtra("cars",cars);
                 setResult(1,i);
                 finish();
 
